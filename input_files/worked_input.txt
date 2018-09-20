@@ -1,0 +1,162 @@
+#include <stdio.h>
+
+void main(){
+	int a, b,c, d, e;
+	b = a - d;
+	e = c + c;
+	d = 5 + 7;
+	c = d - a;
+	b = d - a;
+}
+
+
+#include <stdio.h>
+
+void main(){
+	int a, b,c, d , e;
+	a = 6, d = 7;
+	c = e + b; //no constant
+	c = a + d; //both constant so c constant
+	c = b; //assining variable to constant so c no more constant
+	a = c + c; //c no constant so a is not constant
+	a = d; //assiging constant to a so a is now constant
+	d = 18; 
+	c = a + d; 
+	d = e;
+	
+	printf("a: %d",c);
+}
+
+
+#include <stdio.h>
+
+void main(){
+	int a = 3, b = 6,c, d, e;
+	b = a + b;
+	e = b + 3;
+	c = a + a;
+	c = d;
+	printf("a : %d", a);
+}
+
+
+
+#include <stdio.h>
+
+void main(){
+	int a = 3, b = 6;
+	int c, d, e;
+	a = b + a;
+	b = a + b;
+	c = a + 0;
+	d = a + b;
+	e = d + a;
+	a = a + b;
+	
+	
+	printf("a = %d, b = %d, c = %d, d = %d, e = %d", a,b,c,d,e);
+	
+}
+
+
+#include <stdio.h>
+
+int foo(int x, int y){
+	int a, b, c, d, e;
+	a = x + a;
+	c = a + b;
+	e = a + b;
+	d = a / a;
+	e = d + a;
+printf("x : %d\n", e);
+return x + y;
+
+}
+
+void main(){
+	int a = 3, b = 6;
+	
+	
+	a = foo(a,b);
+	
+	
+	printf("a = %d", a);
+	
+}
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#define MAXSTR 512
+#define INTSTR 32
+
+int foo(int x, int y){	
+	int z = 3, a = 6,b,c,d,e;
+	
+	char *sbuf, *ibuf;
+	
+	sbuf = (char *) malloc(MAXSTR * (sizeof(char)));
+	ibuf = (char *) malloc(INTSTR * (sizeof(char)));
+	
+	FILE *fp = fdopen(STDIN_FILENO, "r");
+	
+	fgets(sbuf, MAXSTR, fp);
+	
+	ibuf = strtok (sbuf, " ");
+	b = strtol(ibuf,NULL,10);
+	
+	ibuf = strtok (sbuf, " ");
+	c = strtol(ibuf,NULL,10);
+	
+	ibuf = strtok (sbuf, " ");
+	d = strtol(ibuf,NULL,10);
+
+	ibuf = strtok (sbuf, " ");
+	e = strtol(ibuf,NULL,10);
+
+	a = z + a;
+	a = z + b;
+	c = a + b;
+	d = a - a;
+	e = b + a;
+	d = a / a;
+	e = d + z;
+	d = c;
+printf("x : %d, y = %d, a = %d, b = %d, c = %d, d = %d, e = %d\n",x,y,a,b, c,d,e);
+return e + 5;
+
+}
+
+int main(){
+	int a = 6, b = 3, c, d, e, f;
+	
+	
+	d = a + b; // a and b both constants d is constant
+	f = a; // f is constant
+	f = a * 0; //value of f is zero	 
+	e = a / b; //e is now constant
+	f = e * d;
+	e = a / b;
+	c = b / a; //not a duplicate expression
+	e = d * e; //duplicate duplicate and constantbcz e actually does not change
+	e = d;
+	c = e * d; //not duplicate
+	
+	printf("a = %d, b = %d, c = %d, d = %d, e = %d, f = %d\n", a,b,c,d,e,f);
+	e = foo(c,b);
+	printf("After foo a is %d\n", e);
+	return 0;	
+	
+}
+
+
+
+
+
+
+
